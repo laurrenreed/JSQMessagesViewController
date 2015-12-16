@@ -82,36 +82,36 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     self.rightBarButtonContainerView.backgroundColor = backgroundColor;
 }
 
-- (void)setLeftBarButtonItem:(UIButton *)leftBarButtonItem
-{
-    if (_leftBarButtonItem) {
-        [_leftBarButtonItem removeFromSuperview];
-    }
-
-    if (!leftBarButtonItem) {
-        _leftBarButtonItem = nil;
-        self.leftHorizontalSpacingConstraint.constant = 0.0f;
-        self.leftBarButtonItemWidth = 0.0f;
-        self.leftBarButtonContainerView.hidden = YES;
-        return;
-    }
-
-    if (CGRectEqualToRect(leftBarButtonItem.frame, CGRectZero)) {
-        leftBarButtonItem.frame = self.leftBarButtonContainerView.bounds;
-    }
-
-    self.leftBarButtonContainerView.hidden = NO;
-    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
-    self.leftBarButtonItemWidth = CGRectGetWidth(leftBarButtonItem.frame);
-
-    [leftBarButtonItem setTranslatesAutoresizingMaskIntoConstraints:NO];
-
-    [self.leftBarButtonContainerView addSubview:leftBarButtonItem];
-    [self.leftBarButtonContainerView jsq_pinAllEdgesOfSubview:leftBarButtonItem];
-    [self setNeedsUpdateConstraints];
-
-    _leftBarButtonItem = leftBarButtonItem;
-}
+//- (void)setLeftBarButtonItem:(UIButton *)leftBarButtonItem
+//{
+//    if (_leftBarButtonItem) {
+//        [_leftBarButtonItem removeFromSuperview];
+//    }
+//
+//    if (!leftBarButtonItem) {
+//        _leftBarButtonItem = nil;
+//        self.leftHorizontalSpacingConstraint.constant = 0.0f;
+//        self.leftBarButtonItemWidth = 0.0f;
+//        self.leftBarButtonContainerView.hidden = YES;
+//        return;
+//    }
+//
+//    if (CGRectEqualToRect(leftBarButtonItem.frame, CGRectZero)) {
+//        leftBarButtonItem.frame = self.leftBarButtonContainerView.bounds;
+//    }
+//
+//    self.leftBarButtonContainerView.hidden = NO;
+//    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+//    self.leftBarButtonItemWidth = CGRectGetWidth(leftBarButtonItem.frame);
+//
+//    [leftBarButtonItem setTranslatesAutoresizingMaskIntoConstraints:NO];
+//
+//    [self.leftBarButtonContainerView addSubview:leftBarButtonItem];
+//    [self.leftBarButtonContainerView jsq_pinAllEdgesOfSubview:leftBarButtonItem];
+//    [self setNeedsUpdateConstraints];
+//
+//    _leftBarButtonItem = leftBarButtonItem;
+//}
 
 - (void)setLeftBarButtonItemWidth:(CGFloat)leftBarButtonItemWidth
 {
